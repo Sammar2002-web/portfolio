@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Syed Ammar — Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1720;
+      --muted:#9aa4b2;
+      --accent:#00e5ff;
+      --accent-2:#7c5cff;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+      --maxw:1100px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,var(--bg) 0%, #06080b 100%); color:#e6eef6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      -webkit-text-size-adjust:100%;
+      padding:40px 20px;
+      display:flex; align-items:flex-start; justify-content:center;
+    }
+    .wrap{width:100%; max-width:var(--maxw)}
+
+    header{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:28px}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:48px; height:48px; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; font-weight:800; color:#02101a}
+    h1{margin:0; font-size:18px; font-weight:700}
+    .title-sub{color:var(--muted); font-size:13px}
+    nav a{color:var(--muted); text-decoration:none; margin-left:18px; font-size:14px}
+    nav a:hover{color:var(--accent)}
+
+    .hero{display:grid; grid-template-columns:1fr 340px; gap:28px; align-items:start; margin-bottom:36px}
+    .card{background:linear-gradient(180deg,var(--glass),var(--glass-2)); border:1px solid rgba(255,255,255,0.04); padding:22px; border-radius:12px}
+    .intro h2{font-size:28px; margin:0 0 6px}
+    .intro p{color:var(--muted); margin:0 0 18px}
+    .cta{display:flex; gap:10px}
+    .btn{background:transparent; border:1px solid rgba(255,255,255,0.06); padding:10px 14px; border-radius:10px; color:var(--accent); cursor:pointer; font-weight:600}
+    .btn.alt{color:var(--muted); border-color:rgba(255,255,255,0.03)}
+
+    .side-contact{display:flex; flex-direction:column; gap:12px}
+    .contact-line{display:flex; gap:10px; align-items:center; color:var(--muted); font-size:14px}
+    .contact-line strong{color:#fff}
+
+    .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+
+    .skills{display:flex; flex-wrap:wrap; gap:10px}
+    .skill{background:rgba(255,255,255,0.03); padding:8px 10px; border-radius:8px; color:var(--muted); font-weight:600; font-size:13px}
+
+    .section-title{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
+    .section-title h3{margin:0}
+    .timeline{display:flex; flex-direction:column; gap:10px}
+    .timeline-item{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:14px; border-radius:10px; border:1px solid rgba(255,255,255,0.03)}
+    .project-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+    .project{padding:16px; border-radius:10px; background:linear-gradient(180deg, rgba(124,92,255,0.04), rgba(0,229,255,0.02)); border:1px solid rgba(255,255,255,0.03)}
+    .project h4{margin:0 0 6px}
+    .badges{display:flex; gap:8px; flex-wrap:wrap}
+    .badge{font-size:12px; padding:6px 8px; border-radius:8px; background:rgba(255,255,255,0.02); color:var(--muted)}
+
+    footer{margin-top:28px; color:var(--muted); display:flex; justify-content:space-between; align-items:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .project-grid,.grid{grid-template-columns:1fr}
+    }
+
+    /* small animations */
+    .logo, .btn{transition:transform .15s ease, box-shadow .15s ease}
+    .logo:hover{transform:translateY(-3px)}
+    .btn:hover{transform:translateY(-2px)}
+
+    .neon{color:var(--accent); text-shadow:0 6px 20px rgba(0,229,255,0.06)}
+
+    form input, form textarea{width:100%; background:transparent; border:1px solid rgba(255,255,255,0.04); padding:10px; border-radius:8px; color:var(--muted); font-size:14px; margin-bottom:10px}
+    form button{background:linear-gradient(90deg,var(--accent),var(--accent-2)); border:none; padding:10px 12px; border-radius:8px; cursor:pointer; color:#021018; font-weight:700}
+
+    .small{font-size:13px; color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SA</div>
+        <div>
+          <h1>Syed Ammar</h1>
+          <div class="title-sub">Software Engineer — .NET • Backend • DevOps</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card intro">
+          <h2 class="neon">Hi — I'm Ammar.</h2>
+          <p>Enthusiastic and detail-oriented Software Engineer with hands-on experience building backend systems using .NET Core, C#, and SQL. I like small, reliable systems and clean APIs. I also tinker with Azure and automate deployments.</p>
+          <div class="skills" style="margin-bottom:12px">
+            <div class="skill">.NET Core</div>
+            <div class="skill">C#</div>
+            <div class="skill">SQL Server</div>
+            <div class="skill">Azure</div>
+            <div class="skill">SignalR</div>
+            <div class="skill">Entity Framework</div>
+            <div class="skill">Dapper</div>
+            <div class="skill">Git & CI/CD</div>
+          </div>
+          <div class="cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn alt" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <aside class="card side-contact">
+          <div class="contact-line"><strong>Location:</strong><span>Islamabad, Pakistan</span></div>
+          <div class="contact-line"><strong>Email:</strong><a href="mailto:syed.ammar8910@gmail.com" style="color:var(--accent); text-decoration:none;">syed.ammar8910@gmail.com</a></div>
+          <div class="contact-line"><strong>Phone:</strong><span class="small">+92 3175725347</span></div>
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03); margin:8px 0">
+          <div class="small">Socials</div>
+          <div style="display:flex; gap:10px; margin-top:8px">
+            <!-- Replace # with your profile URLs -->
+            <a href="#" class="badge">GitHub</a>
+            <a href="#" class="badge">LinkedIn</a>
+            <a href="#" class="badge">Resume</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects" style="margin-bottom:26px">
+        <div class="section-title"><h3>Projects</h3><div class="small">selected work — backend, auth, realtime</div></div>
+        <div class="project-grid">
+          <div class="project">
+            <h4>Tribe</h4>
+            <div class="small" style="margin-bottom:8px">HR Management Portal</div>
+            <p class="small">Built with .NET Core, SQL Server and Entity Framework. Features user management, role-based access, and reporting for HR workflows.</p>
+            <div class="badges" style="margin-top:10px">
+              <div class="badge">.NET Core</div>
+              <div class="badge">SQL Server</div>
+              <div class="badge">EF Core</div>
+            </div>
+          </div>
+
+          <div class="project">
+            <h4>Azure Access Management</h4>
+            <div class="small" style="margin-bottom:8px">OAuth Scopes & RBAC Implementation</div>
+            <p class="small">A project integrating .NET APIs with Azure AD. Implemented OAuth 2.0 scopes, delegated permissions and token validation for fine-grained access control across microservices.</p>
+            <div class="badges" style="margin-top:10px">
+              <div class="badge">Azure AD</div>
+              <div class="badge">OAuth 2.0</div>
+              <div class="badge">.NET Core</div>
+            </div>
+          </div>
+
+          <div class="project">
+            <h4>Chat App</h4>
+            <div class="small" style="margin-bottom:8px">Realtime Messaging with SignalR</div>
+            <p class="small">Real-time chat system with SignalR and .NET Core backend. Supports private messaging, typing indicators, and basic delivery acknowledgements.</p>
+            <div class="badges" style="margin-top:10px">
+              <div class="badge">SignalR</div>
+              <div class="badge">WebSockets</div>
+              <div class="badge">.NET Core</div>
+            </div>
+          </div>
+
+          <div class="project">
+            <h4>Task Manager</h4>
+            <div class="small" style="margin-bottom:8px">Internal Project Tracking</div>
+            <p class="small">Lightweight task tracking tool for internal use. Features project boards, assignment, and a REST API for integrations.</p>
+            <div class="badges" style="margin-top:10px">
+              <div class="badge">REST API</div>
+              <div class="badge">Dapper</div>
+              <div class="badge">CI/CD</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" style="margin-bottom:26px">
+        <div class="section-title"><h3>Experience</h3><div class="small">where I learned most of the scaffolding</div></div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Logic Powered Solution — Jr. Software Engineer</strong>
+            <div class="small">Islamabad, Pakistan | June 2023 — Present</div>
+            <ul class="small" style="margin:8px 0 0 18px">
+              <li>Developed and maintained web applications using .NET Core.</li>
+              <li>Collaborated on design, diagnostics, and performance improvements.</li>
+              <li>Maintained technical documentation and contributed to feature planning.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <strong>Education</strong>
+            <div class="small">Preston University — BBA in Information Technology</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-title"><h3>Contact</h3><div class="small">Let’s build something reliable</div></div>
+        <div class="grid">
+          <div class="card">
+            <form id="contactForm">
+              <input type="text" id="name" placeholder="Your name" required />
+              <input type="email" id="email" placeholder="Your email" required />
+              <textarea id="message" rows="5" placeholder="Message" required></textarea>
+              <button type="submit">Send message</button>
+            </form>
+            <div class="small" style="margin-top:8px">Or email directly at <a href="mailto:syed.ammar8910@gmail.com" style="color:var(--accent)">syed.ammar8910@gmail.com</a></div>
+          </div>
+
+          <div class="card">
+            <div style="margin-bottom:8px"><strong>Quick contact</strong></div>
+            <div class="small">Phone: +92 3175725347</div>
+            <div class="small">Email: syed.ammar8910@gmail.com</div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="small">© Syed Ammar</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Simple client-side mail fallback
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent('Name: '+name+'%0AEmail: '+email+'%0A%0A'+message);
+      // open mail client
+      window.location.href = `mailto:syed.ammar8910@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
